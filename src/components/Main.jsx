@@ -1,7 +1,8 @@
 import "./Main.css";
+import TitleSection from "./TitleSection";
 
 const Main = () => {
-  return <div>Main</div>;
+  return <TitleSection />;
 };
 
 export default Main;
