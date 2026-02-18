@@ -1,7 +1,12 @@
+import CategoryControls from "./CategoryControls";
 import "./PrimarySection.css";
 
 const PrimarySection = () => {
-  return <section>PrimarySection</section>;
+  return (
+    <section>
+      <CategoryControls />
+    </section>
+  );
 };
 
 export default PrimarySection;
