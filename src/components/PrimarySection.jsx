@@ -1,13 +1,17 @@
 import "./PrimarySection.css";
 
-import ActionControls from "./ActionControls";
 import CategoryControls from "./CategoryControls";
 import MenuResult from "./MenuResult";
+import ActionControls from "./ActionControls";
+
+import { useState } from "react";
 
 const PrimarySection = () => {
+  const [selectedCategory, setSelectedCategory] = useState(null);
+
   return (
     <section>
-      <CategoryControls />
+      <CategoryControls onSelect={setSelectedCategory} />
       <MenuResult />
       <ActionControls />
     </section>
