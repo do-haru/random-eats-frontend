@@ -4,12 +4,12 @@ import CategoryControls from "./CategoryControls";
 import MenuResult from "./MenuResult";
 import ActionControls from "./ActionControls";
 
+import { categories } from "../data/categories";
 import { mockMenus } from "../data/menus";
 
 import { useState } from "react";
 
 const PrimarySection = () => {
-  const categories = ["한식", "양식", "중식", "일식", "디저트", "기타"];
   const [selectedCategories, setSelectedCategories] = useState(categories);
 
   const [recommendedMenu, setRecommendedMenu] = useState(null);
