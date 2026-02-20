@@ -1,0 +1,9 @@
+.CategoryControls button {
+  background-color: #f2f2f2;
+}
+
+/* 선택된 상태 */
+.CategoryControls button.active {
+  background-color: #222;
+  color: white;
+}
