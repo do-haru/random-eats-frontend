@@ -4,6 +4,8 @@ import CategoryControls from "./CategoryControls";
 import MenuResult from "./MenuResult";
 import ActionControls from "./ActionControls";
 
+import { mockMenus } from "../data/menus";
+
 import { useState } from "react";
 
 import bread from "../assets/bread.jpg";
@@ -16,15 +18,6 @@ const PrimarySection = () => {
     name: "테스트 메뉴",
     image: bread,
   });
-
-  const mockMenus = [
-    { name: "비빔밥", category: "한식", image: bread },
-    { name: "김치찌개", category: "한식", image: bread },
-    { name: "파스타", category: "양식", image: bread },
-    { name: "피자", category: "양식", image: bread },
-    { name: "초밥", category: "일식", image: bread },
-    { name: "짜장면", category: "중식", image: bread },
-  ];
 
   const handleToggleCategory = (category) => {
     setSelectedCategories((prev) =>
