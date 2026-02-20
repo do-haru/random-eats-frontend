@@ -17,12 +17,23 @@ const PrimarySection = () => {
     image: bread,
   });
 
+  const mockMenus = [
+    { name: "비빔밥", image: bread },
+    { name: "파스타", image: bread },
+    { name: "초밥", image: bread },
+  ];
+
   const handleToggleCategory = (category) => {
     setSelectedCategories((prev) =>
       prev.includes(category)
         ? prev.filter((c) => c !== category)
         : [...prev, category]
     );
+  };
+
+  const handleRecommend = () => {
+    const randomIndex = Math.floor(Math.random() * mockMenus.length);
+    setRecommendedMenu(mockMenus[randomIndex]);
   };
 
   return (
@@ -33,7 +44,7 @@ const PrimarySection = () => {
         onToggle={handleToggleCategory}
       />
       <MenuResult recommendedMenu={recommendedMenu} />
-      <ActionControls />
+      <ActionControls onRecommend={handleRecommend} />
     </section>
   );
 };

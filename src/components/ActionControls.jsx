@@ -1,9 +1,11 @@
 import "./ActionControls.css";
 
-const ActionControls = () => {
+const ActionControls = ({ onRecommend }) => {
   return (
     <div className="ActionControls">
-      <button type="button">결정</button>
+      <button type="button" onClick={onRecommend}>
+        결정
+      </button>
     </div>
   );
 };
