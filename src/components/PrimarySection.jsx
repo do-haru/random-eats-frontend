@@ -6,10 +6,16 @@ import ActionControls from "./ActionControls";
 
 import { useState } from "react";
 
+import bread from "../assets/bread.jpg";
+
 const PrimarySection = () => {
   const categories = ["한식", "양식", "중식", "일식", "디저트", "기타"];
-
   const [selectedCategories, setSelectedCategories] = useState(categories);
+
+  const [recommendedMenu, setRecommendedMenu] = useState({
+    name: "테스트 메뉴",
+    image: bread,
+  });
 
   const handleToggleCategory = (category) => {
     setSelectedCategories((prev) =>
@@ -26,7 +32,7 @@ const PrimarySection = () => {
         selectedCategories={selectedCategories}
         onToggle={handleToggleCategory}
       />
-      <MenuResult />
+      <MenuResult recommendedMenu={recommendedMenu} />
       <ActionControls />
     </section>
   );

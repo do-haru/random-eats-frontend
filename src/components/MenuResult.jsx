@@ -1,12 +1,18 @@
 import "./MenuResult.css";
 
-import bread from "../assets/bread.jpg";
+const MenuResult = ({ recommendedMenu }) => {
+  if (!recommendedMenu) {
+    return (
+      <div className="MenuResult">
+        <p>결정 버튼을 클릭하세요</p>
+      </div>
+    );
+  }
 
-const MenuResult = () => {
   return (
     <div className="MenuResult">
-      <img src={bread} alt="빵" />
-      <p>빵</p>
+      <img src={recommendedMenu.image} alt={recommendedMenu.name} />
+      <p>{recommendedMenu.name}</p>
     </div>
   );
 };
