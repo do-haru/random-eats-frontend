@@ -62,7 +62,10 @@ const PrimarySection = () => {
         onToggle={handleToggleCategory}
       />
       <MenuResult recommendedMenu={recommendedMenu} />
-      <ActionControls onRecommend={handleRecommend} />
+      <ActionControls
+        onRecommend={handleRecommend}
+        disabled={selectedCategories.length === 0}
+      />
     </section>
   );
 };

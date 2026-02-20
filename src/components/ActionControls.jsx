@@ -1,9 +1,9 @@
 import "./ActionControls.css";
 
-const ActionControls = ({ onRecommend }) => {
+const ActionControls = ({ onRecommend, disabled }) => {
   return (
     <div className="ActionControls">
-      <button type="button" onClick={onRecommend}>
+      <button type="button" onClick={onRecommend} disabled={disabled}>
         결정
       </button>
     </div>
