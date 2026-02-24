@@ -5,12 +5,13 @@ import MenuResult from "./MenuResult";
 import ActionControls from "./ActionControls";
 
 import { categories } from "../data/categories";
-import { mockMenus } from "../data/menus";
 
 import { useState } from "react";
 
 const PrimarySection = () => {
-  const [selectedCategories, setSelectedCategories] = useState(categories);
+  const [selectedCategories, setSelectedCategories] = useState(
+    categories.map((c) => c.value)
+  );
 
   const [recommendedMenu, setRecommendedMenu] = useState(null);
 
@@ -22,24 +23,28 @@ const PrimarySection = () => {
     );
   };
 
-  const handleRecommend = () => {
-    // 1. 선택된 카테고리에 해당하는 메뉴만 필터링
-    const filteredMenus = mockMenus.filter((menu) =>
-      selectedCategories.includes(menu.category)
-    );
+  const handleRecommend = async () => {
+    try {
+      const response = await fetch("http://localhost:8080/api/menus/random", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(selectedCategories),
+      });
 
-    // 2. 예외 처리 (선택된 카테고리가 없거나 결과가 없을 때)
-    if (filteredMenus.length === 0) {
-      alert("선택된 카테고리가 없습니다.");
-      return;
+      // 에러 응답 처리 (400 / 404)
+      if (!response.ok) {
+        const errorData = await response.json();
+        alert(errorData.message);
+        return;
+      }
+
+      const data = await response.json();
+      setRecommendedMenu(data);
+    } catch (error) {
+      console.error("추천 요청 실패:", error);
     }
-
-    // 3. 랜덤 선택
-    const randomIndex = Math.floor(Math.random() * filteredMenus.length);
-    const randomMenu = filteredMenus[randomIndex];
-
-    // 4. 상태 업데이트
-    setRecommendedMenu(randomMenu);
   };
 
   return (

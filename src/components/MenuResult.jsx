@@ -11,7 +11,7 @@ const MenuResult = ({ recommendedMenu }) => {
 
   return (
     <div className="MenuResult">
-      <img src={recommendedMenu.image} alt={recommendedMenu.name} />
+      <img src={recommendedMenu.imageUrl} alt={recommendedMenu.name} />
       <p>{recommendedMenu.name}</p>
     </div>
   );

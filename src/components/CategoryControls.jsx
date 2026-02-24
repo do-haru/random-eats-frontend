@@ -5,11 +5,13 @@ const CategoryControls = ({ categories, selectedCategories, onToggle }) => {
     <div className="CategoryControls">
       {categories.map((category) => (
         <button
-          key={category}
-          onClick={() => onToggle(category)}
-          className={selectedCategories.includes(category) ? "active" : ""}
+          key={category.value}
+          onClick={() => onToggle(category.value)}
+          className={
+            selectedCategories.includes(category.value) ? "active" : ""
+          }
         >
-          {category}
+          {category.label}
         </button>
       ))}
     </div>
