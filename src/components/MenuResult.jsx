@@ -1,11 +1,22 @@
 import "./MenuResult.css";
 
-const MenuResult = ({ recommendedMenu, loading }) => {
+const MenuResult = ({ recommendedMenu, loading, error }) => {
   if (loading) {
     return (
       <div className="MenuResult">
         <div className="menu-placeholder">
           <p>추천 중...</p>
+        </div>
+      </div>
+    );
+  }
+
+  if (error) {
+    return (
+      <div className="MenuResult">
+        <div className="menu-card error">
+          <p>{error}</p>
+          <small>잠시 후 다시 시도해주세요</small>
         </div>
       </div>
     );

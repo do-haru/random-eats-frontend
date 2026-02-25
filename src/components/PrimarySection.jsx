@@ -15,6 +15,7 @@ const PrimarySection = () => {
 
   const [recommendedMenu, setRecommendedMenu] = useState(null);
   const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
 
   const handleToggleCategory = (category) => {
     setSelectedCategories((prev) =>
@@ -26,6 +27,8 @@ const PrimarySection = () => {
 
   const handleRecommend = async () => {
     setLoading(true);
+    setError(null);
+
     try {
       const response = await fetch("http://localhost:8080/api/menus/random", {
         method: "POST",
@@ -45,7 +48,7 @@ const PrimarySection = () => {
       const data = await response.json();
       setRecommendedMenu(data);
     } catch (error) {
-      console.error("추천 요청 실패:", error);
+      setError("서버 요청에 실패했습니다.");
     } finally {
       setLoading(false);
     }
@@ -58,7 +61,11 @@ const PrimarySection = () => {
         selectedCategories={selectedCategories}
         onToggle={handleToggleCategory}
       />
-      <MenuResult recommendedMenu={recommendedMenu} loading={loading} />
+      <MenuResult
+        recommendedMenu={recommendedMenu}
+        loading={loading}
+        error={error}
+      />
       <ActionControls
         onRecommend={handleRecommend}
         disabled={loading || selectedCategories.length === 0}
