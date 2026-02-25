@@ -1,6 +1,16 @@
 import "./MenuResult.css";
 
-const MenuResult = ({ recommendedMenu }) => {
+const MenuResult = ({ recommendedMenu, loading }) => {
+  if (loading) {
+    return (
+      <div className="MenuResult">
+        <div className="menu-placeholder">
+          <p>추천 중...</p>
+        </div>
+      </div>
+    );
+  }
+
   if (!recommendedMenu) {
     return (
       <div className="MenuResult">

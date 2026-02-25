@@ -14,6 +14,7 @@ const PrimarySection = () => {
   );
 
   const [recommendedMenu, setRecommendedMenu] = useState(null);
+  const [loading, setLoading] = useState(false);
 
   const handleToggleCategory = (category) => {
     setSelectedCategories((prev) =>
@@ -24,6 +25,7 @@ const PrimarySection = () => {
   };
 
   const handleRecommend = async () => {
+    setLoading(true);
     try {
       const response = await fetch("http://localhost:8080/api/menus/random", {
         method: "POST",
@@ -44,6 +46,8 @@ const PrimarySection = () => {
       setRecommendedMenu(data);
     } catch (error) {
       console.error("추천 요청 실패:", error);
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -54,10 +58,10 @@ const PrimarySection = () => {
         selectedCategories={selectedCategories}
         onToggle={handleToggleCategory}
       />
-      <MenuResult recommendedMenu={recommendedMenu} />
+      <MenuResult recommendedMenu={recommendedMenu} loading={loading} />
       <ActionControls
         onRecommend={handleRecommend}
-        disabled={selectedCategories.length === 0}
+        disabled={loading || selectedCategories.length === 0}
       />
     </section>
   );
