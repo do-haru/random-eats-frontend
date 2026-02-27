@@ -1,0 +1,30 @@
+@font-face {
+  font-family: "NEXON Gothic Lv1";
+  src: url("/fonts/NEXON_Lv1_Gothic_Low_OTF_Light.otf") format("opentype");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "NEXON Gothic Lv1";
+  src: url("/fonts/NEXON_Lv1_Gothic_Low_OTF.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "NEXON Gothic Lv1";
+  src: url("/fonts/NEXON_Lv1_Gothic_Low_OTF_Bold.otf") format("opentype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+html,
+body,
+button {
+  font-family: "NEXON Gothic Lv1", system-ui, -apple-system, "Segoe UI", Roboto,
+    "Apple SD Gothic Neo", "Noto Sans KR", Arial, sans-serif;
+}

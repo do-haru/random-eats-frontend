@@ -1,0 +1,11 @@
+.Main {
+  /* 너비 */
+  width: 100%;
+  max-width: 720px;
+
+  /* 배치 */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+}

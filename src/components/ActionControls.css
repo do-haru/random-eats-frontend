@@ -1,0 +1,35 @@
+.ActionControls {
+  /* 크기 */
+  width: 100%;
+
+  /* 배치 */
+  display: flex;
+  justify-content: center;
+}
+
+.ActionControls button {
+  /* 글자 */
+  font-size: 24px;
+  color: #000;
+
+  /* 배치 */
+  padding: 10px 24px;
+
+  /* 배경 */
+  border: none;
+  background-color: #f06a3d;
+
+  /* 기타 */
+  cursor: pointer;
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .ActionControls button {
+    /* 배치 */
+    padding: 8px 14px;
+
+    /* 글자 */
+    font-size: 18px;
+  }
+}

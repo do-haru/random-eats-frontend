@@ -1,9 +1,44 @@
+.CategoryControls {
+  /* 배치 */
+  display: inline-flex;
+}
+
 .CategoryControls button {
-  background-color: #f2f2f2;
+  /* 배치 */
+  padding: 10px 24px;
+
+  /* 배경 */
+  border: none;
+  background-color: #e9e5df;
+
+  /* 글자 */
+  font-size: 20px;
+
+  /* 기타 */
+  cursor: pointer; /* 커서 */
 }
 
 /* 선택된 상태 */
 .CategoryControls button.active {
-  background-color: #222;
-  color: white;
+  /* 배경 */
+  background-color: #f4a261;
+
+  /* 글자 */
+  color: #000;
+}
+
+.CategoryControls button:hover {
+  /* 배경 */
+  background-color: #f1d4b5;
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .CategoryControls button {
+    /* 배치 */
+    padding: 8px 12px;
+
+    /* 글자 */
+    font-size: 14px;
+  }
 }

@@ -1,0 +1,10 @@
+.PrimarySection {
+  /* 크기 */
+  width: 100%;
+
+  /* 배치 */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}

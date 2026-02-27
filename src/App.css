@@ -1,0 +1,31 @@
+:root {
+  --bg: #faf3e8;
+  --text: #2b2b2b;
+}
+
+html,
+body {
+  /* 배치 */
+  margin: 0;
+
+  /* 배경 */
+  background-color: var(--bg);
+
+  /* 글자 */
+  color: var(--text);
+}
+
+.App {
+  /* 크기 */
+  width: 100%;
+}
+
+.AppMain {
+  /* 크기 */
+  min-height: 100vh;
+
+  /* 배치 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

@@ -4,7 +4,7 @@ import TitleSection from "./TitleSection";
 
 const Main = () => {
   return (
-    <div>
+    <div className="Main">
       <TitleSection />
       <PrimarySection />
     </div>

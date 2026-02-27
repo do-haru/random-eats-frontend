@@ -1,0 +1,41 @@
+.TitleSection {
+  /* 크기 */
+  width: 100%;
+
+  /* 배치 */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.TitleSection h1 {
+  /* 배치 */
+  margin: 0;
+
+  /* 글자 */
+  font-size: 44px;
+  font-weight: 600;
+  letter-spacing: -0.5px;
+}
+
+.TitleSection p {
+  /* 배치 */
+  margin: 0;
+
+  /* 글자 */
+  font-size: 16px;
+  color: #666666;
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .TitleSection h1 {
+    /* 글자 */
+    font-size: 32px;
+  }
+
+  .TitleSection p {
+    /* 글자 */
+    font-size: 12px;
+  }
+}

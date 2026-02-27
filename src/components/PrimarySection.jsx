@@ -55,7 +55,7 @@ const PrimarySection = () => {
   };
 
   return (
-    <section>
+    <section className="PrimarySection">
       <CategoryControls
         categories={categories}
         selectedCategories={selectedCategories}

@@ -1,4 +1,85 @@
-.MenuResult img {
-  width: 280px;
-  height: 280px;
+.MenuResult {
+  /* 크기 */
+  width: 550px;
+  height: 350px;
+
+  /* 배치 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+
+  /* 배경 */
+  background-color: white;
+  border-radius: 28px;
+
+  /* 기타 */
+  overflow: hidden;
+}
+
+.menu-result-border {
+  /* 배치 */
+  position: absolute;
+  inset: 0;
+
+  /* 크기 */
+  width: 100%;
+  height: 100%;
+
+  /* 기타 */
+  pointer-events: none;
+}
+
+.MenuResult p {
+  /* 글자 */
+  color: #666666;
+  font-size: 30px;
+}
+
+.MenuResult .menu-result img {
+  /* 크기 */
+  width: 300px;
+  height: auto;
+  max-height: 260px;
+  object-fit: contain;
+
+  /* 배치 */
+  margin-top: 10px;
+}
+
+.MenuResult .menu-result p {
+  /* 배치 */
+  text-align: center;
+  margin: 0;
+
+  /* 글자 */
+  color: #2b2b2b;
+  font-size: 20px;
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .MenuResult {
+    /* 크기 */
+    width: 90%;
+    height: 220px;
+  }
+
+  .MenuResult p {
+    /* 글자 */
+    font-size: 20px;
+  }
+
+  .MenuResult .menu-result img {
+    /* 크기 */
+    width: 200px;
+    height: auto;
+    max-height: 180px;
+  }
+
+  .MenuResult .menu-result p {
+    /* 글자 */
+    font-size: 16px;
+  }
 }
