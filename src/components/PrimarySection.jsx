@@ -9,6 +9,8 @@ import { categories } from "../data/categories";
 import { useState } from "react";
 
 const PrimarySection = () => {
+  const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
+
   const [selectedCategories, setSelectedCategories] = useState(
     categories.map((c) => c.value)
   );
@@ -30,7 +32,7 @@ const PrimarySection = () => {
     setError(null);
 
     try {
-      const response = await fetch("http://localhost:8080/api/menus/random", {
+      const response = await fetch(`${API_BASE_URL}/api/menus/random`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
