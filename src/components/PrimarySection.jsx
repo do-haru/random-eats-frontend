@@ -8,9 +8,9 @@ import { categories } from "../data/categories";
 
 import { useState } from "react";
 
-const PrimarySection = () => {
-  const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
+import { getRandomMenu } from "../api/menuApi";
 
+const PrimarySection = () => {
   const [selectedCategories, setSelectedCategories] = useState(
     categories.map((c) => c.value)
   );
@@ -32,22 +32,7 @@ const PrimarySection = () => {
     setError(null);
 
     try {
-      const response = await fetch(`${API_BASE_URL}/api/menus/random`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(selectedCategories),
-      });
-
-      // 에러 응답 처리 (400 / 404)
-      if (!response.ok) {
-        const errorData = await response.json();
-        alert(errorData.message);
-        return;
-      }
-
-      const data = await response.json();
+      const data = await getRandomMenu(selectedCategories);
       setRecommendedMenu(data);
     } catch (error) {
       setError("서버 요청에 실패했습니다.");
