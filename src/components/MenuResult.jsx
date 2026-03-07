@@ -12,7 +12,7 @@ const MenuResult = ({ recommendedMenu, loading, error }) => {
   } else if (error) {
     content = (
       <div className="menu-error">
-        <p>잠시 후 다시 시도해주세요</p>
+        <p>{error}</p>
       </div>
     );
   } else if (!recommendedMenu) {

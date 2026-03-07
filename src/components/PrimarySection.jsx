@@ -28,6 +28,11 @@ const PrimarySection = () => {
   };
 
   const handleRecommend = async () => {
+    if (selectedCategories.length === 0) {
+      setError("카테고리를 하나 이상 선택해주세요.");
+      return;
+    }
+
     setLoading(true);
     setError(null);
 
@@ -53,10 +58,7 @@ const PrimarySection = () => {
         loading={loading}
         error={error}
       />
-      <ActionControls
-        onRecommend={handleRecommend}
-        disabled={loading || selectedCategories.length === 0}
-      />
+      <ActionControls onRecommend={handleRecommend} disabled={loading} />
     </section>
   );
 };
